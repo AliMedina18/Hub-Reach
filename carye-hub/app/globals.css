@@ -1,0 +1,16 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F0FDFF !important;
+  color: #171717;
+}
+
+/* Esto desactiva el modo oscuro automático para que no arruine tus colores */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #F0FDFF !important;
+    color: #171717;
+  }
+}

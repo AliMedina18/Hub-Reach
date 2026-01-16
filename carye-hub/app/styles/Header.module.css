@@ -1,0 +1,174 @@
+.headerContainer {
+  width: 100%;
+  background-color: #ffffff; /* Fondo blanco para que resalte todo */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem 0;
+  z-index: 100; /* Asegura que esté por encima de todo */
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #000000; /* Negro puro para visibilidad */
+  letter-spacing: -0.5px;
+}
+
+/* --- LINKS DEL NAV (CORREGIDOS) --- */
+.navLinks {
+  display: flex;
+  gap: 4rem; /* Espacio generoso entre Semilleros, Proyectos y Galería */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #000000; /* Cambiado a negro para que se vean sí o sí */
+  font-weight: 600;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.navLinks a:hover {
+  opacity: 0.7;
+}
+
+/* Rayita decorativa al pasar el mouse */
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.loginButton {
+  background-color: transparent;
+  border: 1.5px solid #000; /* Borde más marcado para que se note el botón */
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* --- HERO CONTENT --- */
+.heroContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 24px;
+  margin-top: 15vh; /* Subido para que no se vea "caído" o cortado */
+}
+
+.title {
+  font-size: 2.8rem; /* Tamaño elegante y no exagerado */
+  font-weight: 800;
+  color: #000;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.ctaButton {
+  background-color: #000;
+  color: #fff;
+  padding: 0.9rem 2.5rem;
+  border-radius: 12px; /* Botón más estilizado y menos tosco */
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background-color: #222;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets: Bajamos el espacio pero NO los escondemos */
+@media (max-width: 1024px) {
+  .navLinks {
+    gap: 2rem;
+  }
+}
+
+/* Mobile: Los enlaces ahora se mantienen visibles y se centran */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* Mantiene logo e Iniciar Sesión en la misma línea */
+    flex-wrap: wrap;    /* Permite que los links bajen si no hay espacio */
+    justify-content: space-between;
+  }
+
+  .navLinks {
+    display: flex;       
+    order: 3;            
+    width: 100%;         
+    justify-content: center;
+    gap: 1.8rem;         
+    margin-top: 3rem;
+  }
+
+  .navLinks a {
+    font-size: 1rem;   
+  }
+
+  .title {
+    font-size: 1.9rem;  
+    padding: 0 10px;
+  }
+
+  .heroContent {
+    margin-top: 6vh;     
+  }
+
+  .ctaButton {
+    width: 100%;         
+    max-width: 250px;
+  }
+}
