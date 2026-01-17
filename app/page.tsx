@@ -1,4 +1,4 @@
-import InfoSection from "@/app/components/InfoSection"; 
+import InfoSection from "@/app/components/InfoSection";
 
 export default function Home() {
   return (
